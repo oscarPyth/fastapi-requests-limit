@@ -4,8 +4,8 @@ from fastapi_ratelimit.storages.memory import MemoryStorage
 
 
 storage_engines = {
-    "redis": RedisStorage(host='localhost', port=6379),
-    "memory": MemoryStorage()
+    "redis": RedisStorage,
+    "memory": MemoryStorage
 }
 
 

@@ -1,9 +1,8 @@
-from fastapi import Request, Response
-
-from .configuration import Limiter
 from functools import wraps
 from datetime import timedelta
 import datetime
+from fastapi import Request, Response
+from .configuration import Limiter
 
 count = {}
 
@@ -12,7 +11,7 @@ class LimiterDecorator:
     def __init__(self, time, count_target, status_return_error=401):
         self.time = time
         self.count_target = count_target
-        self.limiter = Limiter()
+        self.limiter = Limiter()  # I need to inject this depend
         self.storage = self.limiter.storage
         self.status_return_error = status_return_error
 

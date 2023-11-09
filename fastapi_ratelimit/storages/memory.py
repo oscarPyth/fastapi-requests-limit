@@ -2,6 +2,7 @@ from .storage import Storage
 
 count = {}
 
+
 class MemoryStorage(Storage):
 
     def __init__(self):
