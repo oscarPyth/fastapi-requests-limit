@@ -24,3 +24,7 @@ class MemoryStorage(Storage):
         register = self.storage_engine.get(id, {})
         self.register = register
         return register.copy()
+
+    @classmethod
+    def clear(self):
+        count.clear()

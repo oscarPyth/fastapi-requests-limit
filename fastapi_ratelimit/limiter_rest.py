@@ -8,18 +8,17 @@ count = {}
 
 
 class LimiterDecorator:
-    def __init__(self, time, count_target, status_return_error=401):
+    def __init__(self, time, count_target, status_return_error=405):
         self.time = time
         self.count_target = count_target
-        self.limiter = Limiter()  # I need to inject this depend
-        self.storage = self.limiter.storage
         self.status_return_error = status_return_error
 
     def __call__(self, func):
         @wraps(func)
         async def wrapper(request: Request, *args, **kwargs):
+            self.limiter = Limiter()  # I need to inject this depend
+            self.storage = storage = self.limiter.storage
             ip = request.headers.get('host')
-            storage = self.storage
             time = self.time
             count_target = self.count_target
             history = storage.get_register(ip)
