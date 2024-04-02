@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fastapi-requests-limit
-Version: 0.1.1
+Version: 0.1.2
 Summary: Control and limit request rates to FastAPI applications with Redis and local memory support.
 Home-page: https://github.com/oscarPyth/fastapi-limit-requests
 Author: Oscar Arias

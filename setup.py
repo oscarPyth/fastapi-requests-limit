@@ -1,11 +1,8 @@
 from setuptools import find_packages, setup
 
-with open("requirements.txt") as f:
-    requirements = f.read().splitlines()
-
 setup(
     name="fastapi-requests-limit",
-    version="0.1.1",
+    version="0.1.2",
     author="Oscar Arias",
     author_email="ariasp26@gmail.com",
     description="Control and limit request rates to FastAPI applications with Redis and local memory support.",
@@ -13,7 +10,9 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/oscarPyth/fastapi-limit-requests",
     packages=find_packages(),
-    install_requires=requirements,
+    install_requires=[
+        "fastapi>=0.103.2"
+    ],
     license="MIT",
     classifiers=[
         "Development Status :: 4 - Beta",
