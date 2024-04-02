@@ -4,9 +4,9 @@ import pytest
 from fastapi import FastAPI, Request
 from httpx import AsyncClient
 
-from fastapi_ratelimit.configuration import Limiter
-from fastapi_ratelimit.limiter_rest import LimiterDecorator as limiter_decorator
-from fastapi_ratelimit.storages.memory import MemoryStorage
+from fastapi_requests_limit.configuration import Limiter
+from fastapi_requests_limit.limiter_rest import LimiterDecorator as limiter_decorator
+from fastapi_requests_limit.storages.memory import MemoryStorage
 
 from .test_constans import COUNT_LIMIT, TIME_LIMIT
 

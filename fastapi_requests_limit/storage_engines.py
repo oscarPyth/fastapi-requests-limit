@@ -1,5 +1,5 @@
-from fastapi_ratelimit.storages.memory import MemoryStorage
-from fastapi_ratelimit.storages.redis import RedisStorage
+from fastapi_requests_limit.storages.memory import MemoryStorage
+from fastapi_requests_limit.storages.redis import RedisStorage
 
 storage_engines = {"redis": RedisStorage, "memory": MemoryStorage}
 

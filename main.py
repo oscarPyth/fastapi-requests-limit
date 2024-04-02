@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from fastapi_ratelimit.configuration import Limiter
+from fastapi_requests_limit.configuration import Limiter
 from route import router
 
 app = FastAPI()

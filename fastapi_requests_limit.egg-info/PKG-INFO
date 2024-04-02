@@ -1,3 +1,26 @@
+Metadata-Version: 2.1
+Name: fastapi-requests-limit
+Version: 0.1.1
+Summary: Control and limit request rates to FastAPI applications with Redis and local memory support.
+Home-page: https://github.com/oscarPyth/fastapi-limit-requests
+Author: Oscar Arias
+Author-email: ariasp26@gmail.com
+License: MIT
+Project-URL: Bug Reports, https://github.com/oscarPyth/fastapi-limit-requests/issues
+Project-URL: Source, https://github.com/oscarPyth/fastapi-limit-requests
+Keywords: fastapi ratelimiting api security
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
 # FastAPI Rate Limit Controller
 
 Brief description of what your library does. Provide a summary that highlights the purpose and functionality of the library.
@@ -90,3 +113,5 @@ If you're interested in contributing to this project, we welcome your contributi
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.txt) file for details.
+
+

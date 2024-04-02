@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Request
 
-from fastapi_ratelimit.limiter_rest import LimiterDecorator as limiter_decorator
+from fastapi_requests_limit.limiter_rest import LimiterDecorator as limiter_decorator
 
 router = APIRouter()
 
