@@ -33,7 +33,15 @@ from fastapi_requests_limit.configuration import Limiter
 
 limiter = Limiter(host="localhost", port="6379", storage_engine='redis')
 ```
+This example requires installing Redis and having a set host. If you don't want to use Redis but rather local memory, The configuration would be as follows:
 
+```python
+
+from fastapi_requests_limit.configuration import Limiter
+
+limiter = Limiter(storage_engine='memory')
+```
+Then you must limit the endpoint you want.
 ```python
 from fastapi_requests_limit.limiter_rest import LimiterDecorator as limiter_decorator
 
