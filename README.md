@@ -1,6 +1,5 @@
 # FastAPI Rate Limit Controller
 
-Brief description of what your library does. Provide a summary that highlights the purpose and functionality of the library.
 
 ## Table of Contents
 
