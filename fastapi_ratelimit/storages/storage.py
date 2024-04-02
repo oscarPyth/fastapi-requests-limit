@@ -1,6 +1,5 @@
 import datetime
 from abc import ABC, abstractmethod
-from datetime import timedelta
 
 
 class Storage(ABC):

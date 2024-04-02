@@ -8,7 +8,6 @@ from fastapi_ratelimit.configuration import Limiter
 from fastapi_ratelimit.limiter_rest import LimiterDecorator as limiter_decorator
 from fastapi_ratelimit.storages.memory import MemoryStorage
 
-from .mock import RedisMock
 from .test_constans import COUNT_LIMIT, TIME_LIMIT
 
 
