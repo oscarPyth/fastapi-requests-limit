@@ -4,5 +4,5 @@ from fastapi_requests_limit.configuration import Limiter
 from route import router
 
 app = FastAPI()
-limiter = Limiter(host="localhost", port="6379", storage_engine="redis")
+limiter = Limiter(storage_engine="memory")
 app.include_router(router)

@@ -19,4 +19,4 @@ class Limiter:
                 "engine error", f"not exits the engine {storage_engine} connection"
             )
         self.storage_engine = storage_engine
-        self.storage = storage_engines.get(storage_engine, "memory")(**storage_params)
+        self.storage = storage_engines.get(storage_engine, "memory")()(**storage_params)

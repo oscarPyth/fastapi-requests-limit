@@ -1,7 +1,12 @@
-from fastapi_requests_limit.storages.memory import MemoryStorage
-from fastapi_requests_limit.storages.redis import RedisStorage
+def get_redis_storage():
+    from fastapi_requests_limit.storages.redis import RedisStorage
+    return RedisStorage
 
-storage_engines = {"redis": RedisStorage, "memory": MemoryStorage}
+def get_memory_store():
+    from fastapi_requests_limit.storages.memory import MemoryStorage
+    return MemoryStorage
+
+storage_engines = {"redis": get_redis_storage, "memory": get_memory_store}
 
 
 def get_engines_availables():
