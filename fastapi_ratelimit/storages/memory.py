@@ -26,5 +26,5 @@ class MemoryStorage(Storage):
         return register.copy()
 
     @classmethod
-    def clear(self):
+    def clear(cls):
         count.clear()

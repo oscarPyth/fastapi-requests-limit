@@ -13,6 +13,7 @@ class LimiterDecorator:
         self.count_target = count_target
         self.status_return_error = status_return_error
 
+
     def __call__(self, func):
         @wraps(func)
         async def wrapper(request: Request, *args, **kwargs):

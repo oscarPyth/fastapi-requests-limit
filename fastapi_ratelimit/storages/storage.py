@@ -3,6 +3,7 @@ from datetime import timedelta
 import datetime
 
 
+
 class Storage(ABC):
     def __init__(self):
         pass

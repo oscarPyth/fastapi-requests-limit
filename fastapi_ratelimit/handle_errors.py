@@ -4,6 +4,7 @@ class EngineException(Exception):
         self.expression = expression
 
 
+
 class NotConfigException(Exception):
     def __init__(self):
         self.message = '''Please ensure to initialize the Limiter with a storage engine option in your main FastAPI 

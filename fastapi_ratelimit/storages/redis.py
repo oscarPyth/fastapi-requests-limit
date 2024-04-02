@@ -2,6 +2,7 @@ from .storage import Storage
 import redis
 
 
+
 class RedisStorage(Storage):
 
     def __init__(self, host, port):

@@ -1,8 +1,13 @@
 import pytest
 #from mymodule import myfunction, function_to_mock
+
+
 class Pol:
+
     def po(self):
         return 6
+
+
 def test_myfunction(mocker):
     # Crear un mock para 'function_to_mock'
     my_instance = Pol()

@@ -6,14 +6,16 @@ import pytest
 import time
 from httpx import AsyncClient
 from .test_constans import TIME_LIMIT, COUNT_LIMIT
+from .mock import RedisMock
 
 
-@pytest.fixture
-@pytest.fixture(scope='session', params=['memory', 'redis'])
+
+@pytest.fixture()
 def config_limiter():
     Limiter(storage_engine='memory')
 
 
+@pytest.fixture
 def test_app(config_limiter):
     app = FastAPI()
 
@@ -39,6 +41,7 @@ async def test_client(test_app):
 ])
 @pytest.mark.anyio
 async def test_limiter_behavior(test_client, additional_request, sleep_time, expected_status_code):
+    test_client
     for _ in range(COUNT_LIMIT):
         response = await test_client.get("/test")
         assert response.status_code == 200
@@ -49,5 +52,4 @@ async def test_limiter_behavior(test_client, additional_request, sleep_time, exp
     if additional_request:
         response = await test_client.get("/test")
         assert response.status_code == expected_status_code
-
 
