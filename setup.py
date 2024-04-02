@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="fastapi-requests-limit",
-    version="0.1.3",
+    version="0.1.4",
     author="Oscar Arias",
     author_email="ariasp26@gmail.com",
     description="Control and limit request rates to FastAPI applications with Redis and local memory support.",
