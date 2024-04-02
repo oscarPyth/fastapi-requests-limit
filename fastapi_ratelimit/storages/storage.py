@@ -1,7 +1,6 @@
+import datetime
 from abc import ABC, abstractmethod
 from datetime import timedelta
-import datetime
-
 
 
 class Storage(ABC):
@@ -22,7 +21,7 @@ class Storage(ABC):
 
     def create_first_register(self) -> dict:
         return {
-            'count': 1,
-            'date': str(datetime.datetime.now()),
-            'last': str(datetime.datetime.now())
+            "count": 1,
+            "date": str(datetime.datetime.now()),
+            "last": str(datetime.datetime.now()),
         }

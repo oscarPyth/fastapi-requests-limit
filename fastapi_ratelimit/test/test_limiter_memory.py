@@ -1,18 +1,20 @@
-from fastapi import FastAPI, Request
-from fastapi_ratelimit.limiter_rest import LimiterDecorator as limiter_decorator
-from fastapi_ratelimit.configuration import Limiter
-from fastapi_ratelimit.storages.memory import MemoryStorage
-import pytest
 import time
-from httpx import AsyncClient
-from .test_constans import TIME_LIMIT, COUNT_LIMIT
-from .mock import RedisMock
 
+import pytest
+from fastapi import FastAPI, Request
+from httpx import AsyncClient
+
+from fastapi_ratelimit.configuration import Limiter
+from fastapi_ratelimit.limiter_rest import LimiterDecorator as limiter_decorator
+from fastapi_ratelimit.storages.memory import MemoryStorage
+
+from .mock import RedisMock
+from .test_constans import COUNT_LIMIT, TIME_LIMIT
 
 
 @pytest.fixture()
 def config_limiter():
-    Limiter(storage_engine='memory')
+    Limiter(storage_engine="memory")
 
 
 @pytest.fixture
@@ -34,13 +36,14 @@ async def test_client(test_app):
         yield ac
 
 
-@pytest.mark.parametrize("additional_request, sleep_time, expected_status_code", [
-    (False, 0, 200),
-    (True, 0, 405),
-    (True, TIME_LIMIT, 200)
-])
+@pytest.mark.parametrize(
+    "additional_request, sleep_time, expected_status_code",
+    [(False, 0, 200), (True, 0, 405), (True, TIME_LIMIT, 200)],
+)
 @pytest.mark.anyio
-async def test_limiter_behavior(test_client, additional_request, sleep_time, expected_status_code):
+async def test_limiter_behavior(
+    test_client, additional_request, sleep_time, expected_status_code
+):
     test_client
     for _ in range(COUNT_LIMIT):
         response = await test_client.get("/test")
@@ -52,4 +55,3 @@ async def test_limiter_behavior(test_client, additional_request, sleep_time, exp
     if additional_request:
         response = await test_client.get("/test")
         assert response.status_code == expected_status_code
-

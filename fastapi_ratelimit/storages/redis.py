@@ -1,10 +1,9 @@
-from .storage import Storage
 import redis
 
+from .storage import Storage
 
 
 class RedisStorage(Storage):
-
     def __init__(self, host, port):
         self.storage_engine = self._create_connection(host, port)
         super().__init__()
@@ -27,4 +26,3 @@ class RedisStorage(Storage):
         register = self.storage_engine.hgetall(id)
         self.register = register
         return register
-

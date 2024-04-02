@@ -4,7 +4,6 @@ count = {}
 
 
 class MemoryStorage(Storage):
-
     def __init__(self):
         self.storage_engine = count
         super().__init__()

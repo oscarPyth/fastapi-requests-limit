@@ -1,9 +1,9 @@
 import pytest
-#from mymodule import myfunction, function_to_mock
+
+# from mymodule import myfunction, function_to_mock
 
 
 class Pol:
-
     def po(self):
         return 6
 
@@ -13,7 +13,7 @@ def test_myfunction(mocker):
     my_instance = Pol()
 
     # Mockear un método de esa instancia
-    mocker.patch.object(my_instance, 'po', return_value=8)
+    mocker.patch.object(my_instance, "po", return_value=8)
 
     # Ahora, al llamar a 'method_to_mock', se devolverá 'mocked response'
     result = my_instance.po()

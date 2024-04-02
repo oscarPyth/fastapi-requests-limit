@@ -1,6 +1,5 @@
-from .storage_engines import get_engines_availables
 from .handle_errors import EngineException, NotConfigException
-from .storage_engines import storage_engines
+from .storage_engines import get_engines_availables, storage_engines
 
 
 class Limiter:
@@ -16,6 +15,8 @@ class Limiter:
         if not storage_engine:
             raise NotConfigException()
         if storage_engine not in get_engines_availables():
-            raise EngineException("engine error", f'not exits the engine {storage_engine} connection')
+            raise EngineException(
+                "engine error", f"not exits the engine {storage_engine} connection"
+            )
         self.storage_engine = storage_engine
-        self.storage = storage_engines.get(storage_engine, 'memory')(**storage_params)
+        self.storage = storage_engines.get(storage_engine, "memory")(**storage_params)
